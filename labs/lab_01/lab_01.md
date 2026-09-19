@@ -7,12 +7,12 @@ jupyter:
       format_version: '1.3'
       jupytext_version: 1.17.3
   kernelspec:
-    display_name: Python 3 (ipykernel)
+    display_name: Python 3
     language: python
     name: python3
 ---
 
-<!-- #region id="7247b8d4" editable=true slideshow={"slide_type": ""} -->
+<!-- #region editable=true id="7247b8d4" slideshow={"slide_type": ""} -->
 # Лабораторная работа 1. Пакет NumPy
 
 
@@ -29,37 +29,39 @@ jupyter:
 В противном случае **работа также будет оценена в 0 баллов**.
 <!-- #endregion -->
 
-<!-- #region id="1966e3d0" editable=true slideshow={"slide_type": ""} -->
+<!-- #region editable=true id="1966e3d0" slideshow={"slide_type": ""} -->
 При выполнении заданий запрещено использовать **while**, **for**, **if**. 
 Все операции должны выполняться с помощью numpy. 
 Напомним, что использование, например, max вместо np.max также является неоптимальным шагом.
 Решение будет засчитано, если оно удовлетворяет условиям выше и проходит asserts.
 <!-- #endregion -->
 
-```python executionInfo={"elapsed": 1081, "status": "ok", "timestamp": 1694439757773, "user": {"displayName": "Sergey Korpachev", "userId": "09181340988160569540"}, "user_tz": -180} id="03cf459c" editable=true slideshow={"slide_type": ""}
+```python editable=true executionInfo={"elapsed": 1081, "status": "ok", "timestamp": 1694439757773, "user": {"displayName": "Sergey Korpachev", "userId": "09181340988160569540"}, "user_tz": -180} id="03cf459c" slideshow={"slide_type": ""}
 import numpy as np
 
 score = 0
 ```
 
-<!-- #region id="cDsKeK4EaWrE" editable=true slideshow={"slide_type": ""} -->
+<!-- #region editable=true id="cDsKeK4EaWrE" slideshow={"slide_type": ""} -->
 ## Задание 1 (1 балл)
 <!-- #endregion -->
 
-```python executionInfo={"elapsed": 4, "status": "ok", "timestamp": 1694439759790, "user": {"displayName": "Sergey Korpachev", "userId": "09181340988160569540"}, "user_tz": -180} id="439425f7" editable=true slideshow={"slide_type": ""}
+```python editable=true executionInfo={"elapsed": 4, "status": "ok", "timestamp": 1694439759790, "user": {"displayName": "Sergey Korpachev", "userId": "09181340988160569540"}, "user_tz": -180} id="439425f7" slideshow={"slide_type": ""}
 # задание 1 (1 балл)
-
 def max_after_zero(x: np.array) -> int:
-    """
+    """~
     Задание: найти максимальный элемент массива среди элементов, которым предшествует ноль
       
     Вход: np.array([0, 2, 0, 3])
     Выход: 3
     """
-    assert False, 'Не реализовано!' # Здесь должен быть ваш код
+    mask = x[:-1] == 0
+    candidates = x[1:][mask]
+    return max(candidates)
+
 ```
 
-```python colab={"base_uri": "https://localhost:8080/", "height": 293} executionInfo={"elapsed": 252, "status": "error", "timestamp": 1694439761443, "user": {"displayName": "Sergey Korpachev", "userId": "09181340988160569540"}, "user_tz": -180} id="a58b05aa" outputId="bfa9232f-9fe7-4333-da96-0a3cc4f0f59d" editable=false slideshow={"slide_type": ""}
+```python colab={"base_uri": "https://localhost:8080/", "height": 293} editable=false executionInfo={"elapsed": 252, "status": "error", "timestamp": 1694439761443, "user": {"displayName": "Sergey Korpachev", "userId": "09181340988160569540"}, "user_tz": -180} id="a58b05aa" outputId="bfa9232f-9fe7-4333-da96-0a3cc4f0f59d" slideshow={"slide_type": ""}
 %%capture
 
 x = np.array([0, 1, 12, 0, 6, 0, 10, 0])
@@ -69,17 +71,17 @@ x = np.array([0, 3, 2, 0, 8, 0, 1, 10])
 assert max_after_zero(x) == 8, 'Тест не пройден'
 
 print("Выполнено")
-score += 1
+score  += 1
 ```
 
-<!-- #region id="zT54XZpBaeHX" editable=true slideshow={"slide_type": ""} -->
+<!-- #region editable=true id="zT54XZpBaeHX" slideshow={"slide_type": ""} -->
 ## Задание 2 (1 балл)
 <!-- #endregion -->
 
-```python executionInfo={"elapsed": 10, "status": "ok", "timestamp": 1694439791603, "user": {"displayName": "Sergey Korpachev", "userId": "09181340988160569540"}, "user_tz": -180} id="0a3ff5e4" editable=true slideshow={"slide_type": ""}
+```python editable=true executionInfo={"elapsed": 10, "status": "ok", "timestamp": 1694439791603, "user": {"displayName": "Sergey Korpachev", "userId": "09181340988160569540"}, "user_tz": -180} id="0a3ff5e4" slideshow={"slide_type": ""}
 # задание 2 (1 балл)
 
-def block_matrix(block: np.array) -> np.array:
+def block_matrix(block: np.ndarray) -> np.ndarray:
     """
     Задание: построить блочную матрицу из четырех блоков, где каждый блок представляет собой заданную матрицу
 
@@ -89,10 +91,10 @@ def block_matrix(block: np.array) -> np.array:
                      [1, 2, 1, 2],
                      [3, 4, 3, 4]])
     """
-    assert False, 'Не реализовано!' # Здесь должен быть ваш код
+    return np.block([[block, block], [block, block]])
 ```
 
-```python colab={"base_uri": "https://localhost:8080/", "height": 327} executionInfo={"elapsed": 9, "status": "error", "timestamp": 1694439791604, "user": {"displayName": "Sergey Korpachev", "userId": "09181340988160569540"}, "user_tz": -180} id="f0ce9850" outputId="c67f53b4-ecc6-4fa7-81ac-432927da7dde" editable=false slideshow={"slide_type": ""}
+```python colab={"base_uri": "https://localhost:8080/", "height": 327} editable=false executionInfo={"elapsed": 9, "status": "error", "timestamp": 1694439791604, "user": {"displayName": "Sergey Korpachev", "userId": "09181340988160569540"}, "user_tz": -180} id="f0ce9850" outputId="c67f53b4-ecc6-4fa7-81ac-432927da7dde" slideshow={"slide_type": ""}
 %%capture
 
 block = np.array([[1, 3, 3], [7, 0, 0]])
@@ -108,11 +110,11 @@ print("Выполнено")
 score += 1
 ```
 
-<!-- #region id="dzvsvRm6apVb" editable=true slideshow={"slide_type": ""} -->
+<!-- #region editable=true id="dzvsvRm6apVb" slideshow={"slide_type": ""} -->
 ## Задание 3 (1 балл)
 <!-- #endregion -->
 
-```python executionInfo={"elapsed": 246, "status": "ok", "timestamp": 1694439796375, "user": {"displayName": "Sergey Korpachev", "userId": "09181340988160569540"}, "user_tz": -180} id="b4535fbf" editable=true slideshow={"slide_type": ""}
+```python editable=true executionInfo={"elapsed": 246, "status": "ok", "timestamp": 1694439796375, "user": {"displayName": "Sergey Korpachev", "userId": "09181340988160569540"}, "user_tz": -180} id="b4535fbf" slideshow={"slide_type": ""}
 # задание 3 (1 балл)
 
 def diag_prod(matrix: np.array) -> int:
@@ -125,10 +127,11 @@ def diag_prod(matrix: np.array) -> int:
                     [1, 3, 4, 6]])
     Выход: 36
     """
-    assert False, 'Не реализовано!' # Здесь должен быть ваш код
+    d = np.diag(matrix)
+    return d[d != 0].prod()
 ```
 
-```python colab={"base_uri": "https://localhost:8080/", "height": 310} executionInfo={"elapsed": 5, "status": "error", "timestamp": 1694439797817, "user": {"displayName": "Sergey Korpachev", "userId": "09181340988160569540"}, "user_tz": -180} id="fa039421" outputId="080cb3f5-b033-4cf2-bb9a-8f9c852090a6" editable=false slideshow={"slide_type": ""}
+```python colab={"base_uri": "https://localhost:8080/", "height": 310} editable=false executionInfo={"elapsed": 5, "status": "error", "timestamp": 1694439797817, "user": {"displayName": "Sergey Korpachev", "userId": "09181340988160569540"}, "user_tz": -180} id="fa039421" outputId="080cb3f5-b033-4cf2-bb9a-8f9c852090a6" slideshow={"slide_type": ""}
 %%capture
 
 matrix = np.array([[0, 1, 2, 3],
@@ -145,7 +148,7 @@ score += 1
 ### Задание 4 (1 балл)
 <!-- #endregion -->
 
-```python executionInfo={"elapsed": 5, "status": "ok", "timestamp": 1694439800023, "user": {"displayName": "Sergey Korpachev", "userId": "09181340988160569540"}, "user_tz": -180} id="cfa98502" editable=true slideshow={"slide_type": ""}
+```python editable=true executionInfo={"elapsed": 5, "status": "ok", "timestamp": 1694439800023, "user": {"displayName": "Sergey Korpachev", "userId": "09181340988160569540"}, "user_tz": -180} id="cfa98502" slideshow={"slide_type": ""}
 # задание 4 (1 балл)
 
 from typing import Tuple
@@ -171,13 +174,15 @@ class StandardScaler:
     """
         
     def fit(self, X: np.array) -> None:
-        assert False, 'Не реализовано!' # Здесь должен быть ваш код
+        self.mean_ = X.mean(axis=0)
+        self.var_ = X.var(axis=0)   # смещённая дисперсия, как в sklearn
 
     def transform(self, X: np.array) -> np.array:
-        assert False, 'Не реализовано!' # Здесь должен быть ваш код
+        sigma = np.sqrt(self.var_)
+        return (X - self.mean_) / sigma
 ```
 
-```python colab={"base_uri": "https://localhost:8080/", "height": 361} executionInfo={"elapsed": 6, "status": "error", "timestamp": 1694439800521, "user": {"displayName": "Sergey Korpachev", "userId": "09181340988160569540"}, "user_tz": -180} id="352d0513" outputId="42f66f0a-e221-4c90-f081-2007cd20b811" editable=false slideshow={"slide_type": ""}
+```python colab={"base_uri": "https://localhost:8080/", "height": 361} editable=false executionInfo={"elapsed": 6, "status": "error", "timestamp": 1694439800521, "user": {"displayName": "Sergey Korpachev", "userId": "09181340988160569540"}, "user_tz": -180} id="352d0513" outputId="42f66f0a-e221-4c90-f081-2007cd20b811" slideshow={"slide_type": ""}
 %%capture
 
 matrix = np.array([[1, 4, 4200], [0, 10, 5000], [1, 2, 1000]])
@@ -207,7 +212,7 @@ print("Выполнено")
 score += 1
 ```
 
-<!-- #region id="VgfO8yt7atav" editable=true slideshow={"slide_type": ""} -->
+<!-- #region editable=true id="VgfO8yt7atav" slideshow={"slide_type": ""} -->
 ### Задание 5 (1 балл)
 <!-- #endregion -->
 
@@ -227,10 +232,12 @@ def antiderivative(coefs: np.array, const: float) -> np.array:
     Вход: [8, 12, 8, 1], 42
     Выход: [2., 4., 4., 1., 42.]
     """
-    assert False, 'Не реализовано!' # Здесь должен быть ваш код
+    n = len(coefs)
+    new_coefs = coefs / np.arange(n, 0, -1)
+    return np.append(new_coefs.astype(float), const)
 ```
 
-```python colab={"base_uri": "https://localhost:8080/", "height": 327} executionInfo={"elapsed": 6, "status": "error", "timestamp": 1694439803375, "user": {"displayName": "Sergey Korpachev", "userId": "09181340988160569540"}, "user_tz": -180} id="41288733" outputId="9e4b86da-8361-4b6b-8b92-bbe46b371c70" editable=false slideshow={"slide_type": ""}
+```python colab={"base_uri": "https://localhost:8080/", "height": 327} editable=false executionInfo={"elapsed": 6, "status": "error", "timestamp": 1694439803375, "user": {"displayName": "Sergey Korpachev", "userId": "09181340988160569540"}, "user_tz": -180} id="41288733" outputId="9e4b86da-8361-4b6b-8b92-bbe46b371c70" slideshow={"slide_type": ""}
 %%capture
 
 coefs = np.array([4, 6, 0, 1])
