@@ -48,7 +48,8 @@ dependencies = [
     # tf-keras
     # tensorflow-model-optimization
     "opencv-python (>=4.13.0.92,<5.0.0.0)",
-    "jupyterlab-spreadsheet-editor (>=0.7.2,<0.8.0)"
+    "jupyterlab-spreadsheet-editor (>=0.7.2,<0.8.0)",
+    "ucimlrepo (>=0.0.7,<0.0.8)"
 ]
 
 
