@@ -5,7 +5,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.3'
-      jupytext_version: 1.16.4
+      jupytext_version: 1.19.5
   kernelspec:
     display_name: Python 3 (ipykernel)
     language: python
@@ -29,20 +29,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 %matplotlib inline
-
-pd.set_option('display.max_columns', 500)
-```
-
-```python
-data = pd.read_csv('./data/data_set.csv', delimiter=';')
-```
-
-```python
-data.head()
-```
-
-```python
-data.info()
 ```
 
 ## Генерируем данные
