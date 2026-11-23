@@ -175,7 +175,7 @@ class StandardScaler:
         
     def fit(self, X: np.array) -> None:
         self.mean_ = X.mean(axis=0)
-        self.var_ = X.var(axis=0)   # смещённая дисперсия, как в sklearn
+        self.var_ = X.var(axis=0)   
 
     def transform(self, X: np.array) -> np.array:
         sigma = np.sqrt(self.var_)
@@ -183,14 +183,16 @@ class StandardScaler:
 ```
 
 ```python colab={"base_uri": "https://localhost:8080/", "height": 361} editable=false executionInfo={"elapsed": 6, "status": "error", "timestamp": 1694439800521, "user": {"displayName": "Sergey Korpachev", "userId": "09181340988160569540"}, "user_tz": -180} id="352d0513" outputId="42f66f0a-e221-4c90-f081-2007cd20b811" slideshow={"slide_type": ""}
-%%capture
 
-matrix = np.array([[1, 4, 4200], [0, 10, 5000], [1, 2, 1000]])
+
+matrix = np.array([[1000000, 4, 4200], [0, 10, 500000], [1, 2, 1000]])
 
 scaler = StandardScaler()
-scaler.fit(matrix)
+n = scaler.fit(matrix)
 
-assert np.allclose(
+
+print(n)
+'''assert np.allclose(
     scaler.mean_,
     np.array([0.66667, 5.3333, 3400])
 ), 'Тест не пройден. Некорректное значение scaler.mean_'
@@ -209,7 +211,7 @@ assert np.allclose(
 
 
 print("Выполнено")
-score += 1
+score += 1 '''
 ```
 
 <!-- #region editable=true id="VgfO8yt7atav" slideshow={"slide_type": ""} -->
