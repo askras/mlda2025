@@ -1,0 +1,669 @@
+[
+  {
+    "question": "Какой инструмент рекомендуется использовать для операций над массивами вместо встроенных функций Python?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "built-in max", "correct": false, "feedback": "Неоптимально, используйте numpy."},
+      {"answer": "np.max", "correct": true, "feedback": "Верно. Это обеспечивает векторизацию и скорость."},
+      {"answer": "list comprehension", "correct": false, "feedback": "Медленнее, чем векторизованные операции NumPy."},
+      {"answer": "map", "correct": false, "feedback": "Не является оптимальным для массивов NumPy."}
+    ]
+  },
+  {
+    "question": "Как правильно импортировать библиотеку NumPy согласно общепринятому стандарту?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "import numpy as np", "correct": true, "feedback": "Верно. Это общепринятый стандарт."},
+      {"answer": "import np as numpy", "correct": false, "feedback": "Неверный синтаксис импорта."},
+      {"answer": "from numpy import *", "correct": false, "feedback": "Не рекомендуется из-за загрязнения пространства имен."},
+      {"answer": "include numpy", "correct": false, "feedback": "Это синтаксис C/C++, а не Python."}
+    ]
+  },
+  {
+    "question": "Какая функция используется для преобразования списка Python в массив NumPy?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "np.list_to_array()", "correct": false, "feedback": "Такой функции не существует."},
+      {"answer": "np.array()", "correct": true, "feedback": "Верно."},
+      {"answer": "np.convert()", "correct": false, "feedback": "Неверно."},
+      {"answer": "np.create()", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Какой атрибут массива NumPy позволяет получить его форму (размерность)?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "size", "correct": false, "feedback": "Возвращает общее количество элементов."},
+      {"answer": "shape", "correct": true, "feedback": "Верно. Возвращает кортеж размеров по каждой оси."},
+      {"answer": "dim", "correct": false, "feedback": "Неверно."},
+      {"answer": "length", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Что вернет функция `np.allclose()` при сравнении двух массивов с идентичными значениями, но разным типом данных (например, int и float)?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "True", "correct": true, "feedback": "Верно. Функция сравнивает значения с учетом допуска."},
+      {"answer": "False", "correct": false, "feedback": "Неверно."},
+      {"answer": "Ошибку", "correct": false, "feedback": "Неверно."},
+      {"answer": "None", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Какие конструкции языка Python запрещено использовать при выполнении заданий лабораторной работы?",
+    "type": "many_choice",
+    "answers": [
+      {"answer": "for", "correct": true, "feedback": "Верно. Циклы запрещены, нужна векторизация."},
+      {"answer": "while", "correct": true, "feedback": "Верно. Циклы запрещены."},
+      {"answer": "if", "correct": true, "feedback": "Верно. Условные операторы запрещены."},
+      {"answer": "import", "correct": false, "feedback": "Импорт библиотек разрешен."}
+    ]
+  },
+  {
+    "question": "Что означает термин «векторизация» в контексте NumPy?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Выполнение операций над массивами целиком без явных циклов", "correct": true, "feedback": "Верно."},
+      {"answer": "Преобразование 1D массива в 2D", "correct": false, "feedback": "Неверно."},
+      {"answer": "Использование циклов for для ускорения", "correct": false, "feedback": "Неверно."},
+      {"answer": "Создание копий массивов в памяти", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Что такое broadcasting (транслирование) в NumPy?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Механизм выполнения операций над массивами разной формы", "correct": true, "feedback": "Верно."},
+      {"answer": "Передача массива по сети", "correct": false, "feedback": "Неверно."},
+      {"answer": "Вывод массива на экран", "correct": false, "feedback": "Неверно."},
+      {"answer": "Копирование массива на диск", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Какая функция создает массив заданной формы, заполненный нулями?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "np.empty()", "correct": false, "feedback": "Создает массив без инициализации значений."},
+      {"answer": "np.zeros()", "correct": true, "feedback": "Верно."},
+      {"answer": "np.ones()", "correct": false, "feedback": "Создает массив из единиц."},
+      {"answer": "np.null()", "correct": false, "feedback": "Такой функции нет."}
+    ]
+  },
+  {
+    "question": "Какая функция создает массив равномерно распределенных значений в заданном диапазоне?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "np.linspace()", "correct": false, "feedback": "Создает массив с заданным количеством элементов."},
+      {"answer": "np.arange()", "correct": true, "feedback": "Верно. Аналог range() в Python."},
+      {"answer": "np.range()", "correct": false, "feedback": "Такой функции нет в NumPy."},
+      {"answer": "np.array()", "correct": false, "feedback": "Преобразует итерируемый объект в массив."}
+    ]
+  },
+  {
+    "question": "Какую задачу решает функция `max_after_zero`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Находит индекс первого нуля", "correct": false, "feedback": "Неверно."},
+      {"answer": "Находит максимальный элемент среди тех, которым предшествует ноль", "correct": true, "feedback": "Верно."},
+      {"answer": "Заменяет все нули на максимум", "correct": false, "feedback": "Неверно."},
+      {"answer": "Считает количество нулей в массиве", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Дан массив `x = np.array([0, 2, 0, 3])`. Что должна вернуть функция `max_after_zero(x)`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "2", "correct": false, "feedback": "2 следует за нулем, но 3 тоже, и 3 > 2."},
+      {"answer": "3", "correct": true, "feedback": "Верно. Элементы после нуля: 2 и 3. Максимум из них: 3."},
+      {"answer": "0", "correct": false, "feedback": "Неверно."},
+      {"answer": "4", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Какой срез массива `x` позволяет получить все элементы, кроме последнего?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "x[1:]", "correct": false, "feedback": "Это все элементы, кроме первого."},
+      {"answer": "x[:-1]", "correct": true, "feedback": "Верно."},
+      {"answer": "x[-1:]", "correct": false, "feedback": "Это только последний элемент."},
+      {"answer": "x[:1]", "correct": false, "feedback": "Это только первый элемент."}
+    ]
+  },
+  {
+    "question": "Как создать булеву маску для элементов, предшествующих элементам после нуля?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "x == 0", "correct": false, "feedback": "Это маска самих нулей."},
+      {"answer": "x[:-1] == 0", "correct": true, "feedback": "Верно. Сравнивает все элементы, кроме последнего, с нулем."},
+      {"answer": "x[1:] == 0", "correct": false, "feedback": "Это маска элементов, следующих за нулем."},
+      {"answer": "np.where(x == 0)", "correct": false, "feedback": "Возвращает индексы, а не булеву маску нужной длины."}
+    ]
+  },
+  {
+    "question": "Дан массив `x = np.array([0, 3, 2, 0, 8, 0, 1, 10])`. Почему число 10 не учитывается при поиске максимума?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Оно меньше 8", "correct": false, "feedback": "10 больше 8."},
+      {"answer": "Перед ним не стоит ноль", "correct": true, "feedback": "Верно. Перед 10 стоит 1."},
+      {"answer": "Оно находится в конце массива", "correct": false, "feedback": "Положение в конце не является причиной, причина в отсутствующем нуле перед ним."},
+      {"answer": "Оно отрицательное", "correct": false, "feedback": "10 положительное."}
+    ]
+  },
+  {
+    "question": "Какая функция NumPy применяется для нахождения максимума в отфильтрованном массиве?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "np.argmax()", "correct": false, "feedback": "Возвращает индекс максимума, а не само значение."},
+      {"answer": "np.max()", "correct": true, "feedback": "Верно."},
+      {"answer": "np.maximum()", "correct": false, "feedback": "Используется для поэлементного сравнения двух массивов."},
+      {"answer": "np.ceil()", "correct": false, "feedback": "Округляет до ближайшего большего целого."}
+    ]
+  },
+  {
+    "question": "Что вернет выражение `x[x[:-1] == 0]` для массива `x = np.array([1, 0, 5, 0, 2])`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "[0, 0]", "correct": false, "feedback": "Неверно."},
+      {"answer": "[5, 2]", "correct": true, "feedback": "Верно. Элементы, перед которыми стоит 0."},
+      {"answer": "[1, 5]", "correct": false, "feedback": "Неверно."},
+      {"answer": "Вызовет ошибку", "correct": false, "feedback": "Не вызовет, это валидная булева индексация."}
+    ]
+  },
+  {
+    "question": "Какой тип данных будет у результата выражения `x[:-1] == 0`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "int", "correct": false, "feedback": "Неверно."},
+      {"answer": "float", "correct": false, "feedback": "Неверно."},
+      {"answer": "bool", "correct": true, "feedback": "Верно. Массив булевых значений (True/False)."},
+      {"answer": "str", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Какие два метода NumPy можно комбинировать для решения задачи `max_after_zero` без использования циклов?",
+    "type": "many_choice",
+    "answers": [
+      {"answer": "Булева индексация", "correct": true, "feedback": "Верно."},
+      {"answer": "np.max", "correct": true, "feedback": "Верно."},
+      {"answer": "np.sort", "correct": false, "feedback": "Не требуется для этой задачи."},
+      {"answer": "np.append", "correct": false, "feedback": "Не требуется."}
+    ]
+  },
+  {
+    "question": "Что произойдет при вызове `np.max()` для пустой выборки (если в массиве нет элементов, которым предшествует ноль)?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Вернет 0", "correct": false, "feedback": "Неверно."},
+      {"answer": "Вызовет ошибку (ValueError)", "correct": true, "feedback": "Верно. Невозможно найти максимум в пустой последовательности."},
+      {"answer": "Вернет None", "correct": false, "feedback": "Неверно."},
+      {"answer": "Вернет -inf", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Какая функция NumPy позволяет циклически сдвигать элементы массива?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "np.shift()", "correct": false, "feedback": "Такой функции нет."},
+      {"answer": "np.roll()", "correct": true, "feedback": "Верно."},
+      {"answer": "np.move()", "correct": false, "feedback": "Такой функции нет."},
+      {"answer": "np.swap()", "correct": false, "feedback": "Такой функции нет."}
+    ]
+  },
+  {
+    "question": "Чему равен результат `max_after_zero` для массива `np.array([0, -5, 0, -2])`?",
+    "type": "numeric",
+    "precision": 0,
+    "answers": [
+      {"type": "value", "value": -2, "correct": true, "feedback": "Верно. Элементы после нуля: -5 и -2. Максимум из них: -2."},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: -2."}
+    ]
+  },
+  {
+    "question": "Какую матрицу строит функция `block_matrix`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Диагональную", "correct": false, "feedback": "Неверно."},
+      {"answer": "Блочную 2x2 из четырех одинаковых блоков", "correct": true, "feedback": "Верно."},
+      {"answer": "Единичную", "correct": false, "feedback": "Неверно."},
+      {"answer": "Треугольную", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Дан блок `np.array([[1, 2], [3, 4]])`. Какова будет форма (shape) результирующей матрицы `block_matrix`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "(2, 2)", "correct": false, "feedback": "Это размер исходного блока."},
+      {"answer": "(4, 4)", "correct": true, "feedback": "Верно. 2x2 блока, каждый 2x2, итого 4x4."},
+      {"answer": "(2, 4)", "correct": false, "feedback": "Неверно."},
+      {"answer": "(8, 8)", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Какая функция NumPy позволяет объединять матрицы в блочную структуру?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "np.merge()", "correct": false, "feedback": "Не существует в NumPy."},
+      {"answer": "np.block()", "correct": true, "feedback": "Верно."},
+      {"answer": "np.join()", "correct": false, "feedback": "Это метод строк Python."},
+      {"answer": "np.concat()", "correct": false, "feedback": "Правильное название np.concatenate, но np.block удобнее для блочных структур."}
+    ]
+  },
+  {
+    "question": "Какая функция NumPy позволяет повторять массив заданное количество раз по осям?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "np.repeat()", "correct": false, "feedback": "Повторяет отдельные элементы, а не блоки."},
+      {"answer": "np.tile()", "correct": true, "feedback": "Верно. Повторяет весь массив как блок."},
+      {"answer": "np.copy()", "correct": false, "feedback": "Создает копию, не повторяя."},
+      {"answer": "np.duplicate()", "correct": false, "feedback": "Не существует в NumPy."}
+    ]
+  },
+  {
+    "question": "Как правильно вызвать `np.tile` для создания матрицы 2x2 из блоков `block`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "np.tile(block, 2)", "correct": false, "feedback": "Это повторит блок только по одной оси или сплющит."},
+      {"answer": "np.tile(block, (2, 2))", "correct": true, "feedback": "Верно. Указывает повторение по обеим осям."},
+      {"answer": "np.tile(block, [4])", "correct": false, "feedback": "Неверно."},
+      {"answer": "np.tile(block, shape=(2,2))", "correct": false, "feedback": "Неверный синтаксис аргументов."}
+    ]
+  },
+  {
+    "question": "Дан блок `np.array([[1, 3, 3], [7, 0, 0]])` (форма 2x3). Какова будет форма результирующей матрицы?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "(2, 3)", "correct": false, "feedback": "Это исходная форма."},
+      {"answer": "(4, 3)", "correct": false, "feedback": "Неверно."},
+      {"answer": "(4, 6)", "correct": true, "feedback": "Верно. 2*2=4 строки, 3*2=6 столбцов."},
+      {"answer": "(6, 4)", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Какие две функции можно использовать для горизонтального и вертикального дублирования матрицы вместо `np.block`?",
+    "type": "many_choice",
+    "answers": [
+      {"answer": "np.hstack", "correct": true, "feedback": "Верно. Для горизонтального объединения."},
+      {"answer": "np.vstack", "correct": true, "feedback": "Верно. Для вертикального объединения."},
+      {"answer": "np.dot", "correct": false, "feedback": "Это скалярное/матричное произведение."},
+      {"answer": "np.cross", "correct": false, "feedback": "Это векторное произведение."}
+    ]
+  },
+  {
+    "question": "Что вернет `np.block([[A, A], [A, A]])`, если A — квадратная матрица 3x3?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Матрицу 3x3", "correct": false, "feedback": "Неверно."},
+      {"answer": "Матрицу 6x6", "correct": true, "feedback": "Верно. 3+3=6."},
+      {"answer": "Матрицу 9x9", "correct": false, "feedback": "Неверно."},
+      {"answer": "Ошибку", "correct": false, "feedback": "Не вызовет ошибку."}
+    ]
+  },
+  {
+    "question": "В чем разница между `np.repeat` и `np.tile` при работе с матрицами?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "np.repeat повторяет всю матрицу, а np.tile повторяет элементы", "correct": false, "feedback": "Наоборот."},
+      {"answer": "np.tile повторяет всю матрицу как блок, а np.repeat повторяет отдельные элементы", "correct": true, "feedback": "Верно."},
+      {"answer": "Это синонимы", "correct": false, "feedback": "Неверно."},
+      {"answer": "np.repeat работает только с 1D массивами", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Какой аргумент передается в `np.block`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Одномерный массив", "correct": false, "feedback": "Неверно."},
+      {"answer": "Вложенный список массивов", "correct": true, "feedback": "Верно. Например, [[A, B], [C, D]]."},
+      {"answer": "Кортеж чисел", "correct": false, "feedback": "Неверно."},
+      {"answer": "Строка с именами переменных", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Какую задачу решает функция `diag_prod`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Сумму диагональных элементов", "correct": false, "feedback": "Это делает np.trace."},
+      {"answer": "Произведение всех ненулевых диагональных элементов", "correct": true, "feedback": "Верно."},
+      {"answer": "Максимум на диагонали", "correct": false, "feedback": "Неверно."},
+      {"answer": "Количество нулей на диагонали", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Какая функция NumPy извлекает главную диагональ из квадратной матрицы?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "np.diagonal()", "correct": false, "feedback": "Работает, но np.diag является более стандартным и универсальным ответом в контексте задания."},
+      {"answer": "np.diag()", "correct": true, "feedback": "Верно. Основной способ извлечения диагонали."},
+      {"answer": "np.trace()", "correct": false, "feedback": "Возвращает сумму диагонали."},
+      {"answer": "np.extract()", "correct": false, "feedback": "Извлекает по условию."}
+    ]
+  },
+  {
+    "question": "Как отфильтровать ненулевые элементы из одномерного массива `d`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "d[d > 0]", "correct": false, "feedback": "Отфильтрует и отрицательные числа, если они есть."},
+      {"answer": "d[d != 0]", "correct": true, "feedback": "Верно. Оставит все, что не равно нулю."},
+      {"answer": "d.drop(0)", "correct": false, "feedback": "Это метод pandas, а не numpy."},
+      {"answer": "np.nonzero(d)", "correct": false, "feedback": "Возвращает индексы, а не сами значения."}
+    ]
+  },
+  {
+    "question": "Какая функция вычисляет произведение элементов массива?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "np.mult()", "correct": false, "feedback": "Не существует."},
+      {"answer": "np.prod()", "correct": true, "feedback": "Верно."},
+      {"answer": "np.cumprod()", "correct": false, "feedback": "Возвращает кумулятивное произведение (массив)."},
+      {"answer": "np.dot()", "correct": false, "feedback": "Скалярное произведение."}
+    ]
+  },
+  {
+    "question": "Дан массив диагонали `[0, 5, 10, 15]`. Что вернет `np.prod` после фильтрации нулей (`d[d != 0]`)?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "0", "correct": false, "feedback": "Нули были отфильтрованы."},
+      {"answer": "750", "correct": true, "feedback": "Верно. 5 * 10 * 15 = 750."},
+      {"answer": "30", "correct": false, "feedback": "Неверно."},
+      {"answer": "150", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Что вернет `np.prod([])` (произведение пустого массива)?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "0", "correct": false, "feedback": "Неверно."},
+      {"answer": "1.0", "correct": true, "feedback": "Верно. Это нейтральный элемент для операции умножения."},
+      {"answer": "NaN", "correct": false, "feedback": "Неверно."},
+      {"answer": "Ошибку", "correct": false, "feedback": "Не вызовет ошибку."}
+    ]
+  },
+  {
+    "question": "Какие два шага необходимы для решения задачи `diag_prod`?",
+    "type": "many_choice",
+    "answers": [
+      {"answer": "Извлечь диагональ и отфильтровать нули", "correct": true, "feedback": "Верно."},
+      {"answer": "Вычислить произведение оставшихся элементов", "correct": true, "feedback": "Верно."},
+      {"answer": "Отсортировать диагональ", "correct": false, "feedback": "Не требуется."},
+      {"answer": "Заменить нули на единицы", "correct": false, "feedback": "Это исказит результат."}
+    ]
+  },
+  {
+    "question": "Что такое `np.trace()`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Произведение диагональных элементов", "correct": false, "feedback": "Неверно."},
+      {"answer": "Сумма диагональных элементов", "correct": true, "feedback": "Верно."},
+      {"answer": "Извлечение диагонали в массив", "correct": false, "feedback": "Это делает np.diag."},
+      {"answer": "Транспонирование матрицы", "correct": false, "feedback": "Это делает .T или np.transpose."}
+    ]
+  },
+  {
+    "question": "Если матрица 4x4, а на диагонали `[2, 0, 3, 0]`, каков будет результат `diag_prod`?",
+    "type": "numeric",
+    "precision": 0,
+    "answers": [
+      {"type": "value", "value": 6, "correct": true, "feedback": "Верно. 2 * 3 = 6."},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: 6."}
+    ]
+  },
+  {
+    "question": "Что вычисляет метод `fit` в классе `StandardScaler`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Стандартное отклонение", "correct": false, "feedback": "Он вычисляет дисперсию, а отклонение извлекается в transform."},
+      {"answer": "Среднее значение и дисперсию по столбцам", "correct": true, "feedback": "Верно."},
+      {"answer": "Минимум и максимум", "correct": false, "feedback": "Это делает MinMaxScaler."},
+      {"answer": "Медиану", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "По какой оси вычисляются статистики в методе `fit`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "axis=1 (по строкам)", "correct": false, "feedback": "Признаки расположены в столбцах."},
+      {"answer": "axis=0 (по столбцам)", "correct": true, "feedback": "Верно."},
+      {"answer": "axis=None", "correct": false, "feedback": "Это вычислило бы одну статистику для всей матрицы."},
+      {"answer": "axis=-1", "correct": false, "feedback": "Эквивалентно axis=1 для 2D."}
+    ]
+  },
+  {
+    "question": "Как вычисляется стандартное отклонение (sigma) в методе `transform`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "sigma = var_ * 2", "correct": false, "feedback": "Неверно."},
+      {"answer": "sigma = np.sqrt(var_)", "correct": true, "feedback": "Верно. Квадратный корень из дисперсии."},
+      {"answer": "sigma = var_ ** 2", "correct": false, "feedback": "Неверно."},
+      {"answer": "sigma = np.log(var_)", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Какая формула используется в методе `transform` для нормализации?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "(X + mean_) / sigma", "correct": false, "feedback": "Неверный знак."},
+      {"answer": "(X - mean_) / sigma", "correct": true, "feedback": "Верно. Z-score нормализация."},
+      {"answer": "(X - mean_) * sigma", "correct": false, "feedback": "Нужно делить, а не умножать."},
+      {"answer": "X * mean_ + sigma", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Какие два атрибута должны быть сохранены в объекте после вызова `fit`?",
+    "type": "many_choice",
+    "answers": [
+      {"answer": "self.mean_", "correct": true, "feedback": "Верно."},
+      {"answer": "self.var_", "correct": true, "feedback": "Верно."},
+      {"answer": "self.std_", "correct": false, "feedback": "В задании требуется сохранять var_, а sigma вычислять на лету."},
+      {"answer": "self.max_", "correct": false, "feedback": "Не требуется."}
+    ]
+  },
+  {
+    "question": "Что произойдет, если дисперсия какого-либо столбца равна 0 при вызове `transform`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Метод вернет нули", "correct": false, "feedback": "Неверно."},
+      {"answer": "Произойдет деление на ноль (появятся inf или NaN)", "correct": true, "feedback": "Верно. Sigma будет 0."},
+      {"answer": "Метод автоматически удалит этот столбец", "correct": false, "feedback": "NumPy не делает этого автоматически."},
+      {"answer": "Вызовет синтаксическую ошибку", "correct": false, "feedback": "Это ошибка выполнения, а не синтаксическая."}
+    ]
+  },
+  {
+    "question": "Дан столбец `[1, 0, 1]`. Чему равно его среднее значение (`mean_`)?",
+    "type": "numeric",
+    "precision": 3,
+    "answers": [
+      {"type": "value", "value": 0.667, "correct": true, "feedback": "Верно. (1+0+1)/3 = 2/3 ≈ 0.667."},
+      {"type": "range", "range": [0.66, 0.67], "correct": true, "feedback": "Верно."},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: 0.667."}
+    ]
+  },
+  {
+    "question": "Какой параметр нужно указать в `np.mean` и `np.var`, чтобы вычислить значения для каждого столбца матрицы `X`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "axis=1", "correct": false, "feedback": "Это вычислит по строкам."},
+      {"answer": "axis=0", "correct": true, "feedback": "Верно."},
+      {"answer": "keepdims=True", "correct": false, "feedback": "Это сохраняет размерность, но не задает ось."},
+      {"answer": "axis=None", "correct": false, "feedback": "Это вычислит одно значение для всей матрицы."}
+    ]
+  },
+  {
+    "question": "Какие две операции NumPy используются в методе `transform`?",
+    "type": "many_choice",
+    "answers": [
+      {"answer": "Вычитание массивов (X - mean_)", "correct": true, "feedback": "Верно."},
+      {"answer": "Деление массивов (/ sigma)", "correct": true, "feedback": "Верно."},
+      {"answer": "Умножение матриц", "correct": false, "feedback": "Не используется."},
+      {"answer": "Скалярное произведение", "correct": false, "feedback": "Не используется."}
+    ]
+  },
+  {
+    "question": "Какова будет форма (shape) массива `mean_` после вызова `fit` для матрицы `X` формы (100, 5)?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "(100,)", "correct": false, "feedback": "Неверно."},
+      {"answer": "(5,)", "correct": true, "feedback": "Верно. Одно значение для каждого из 5 признаков."},
+      {"answer": "(100, 5)", "correct": false, "feedback": "Неверно."},
+      {"answer": "(1,)", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Как называется процесс нормализации данных, при котором вычитается среднее и делится на стандартное отклонение?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Min-Max scaling", "correct": false, "feedback": "Это нормализация в диапазон [0, 1]."},
+      {"answer": "Z-score normalization (Standardization)", "correct": true, "feedback": "Верно."},
+      {"answer": "Log transformation", "correct": false, "feedback": "Это логарифмирование."},
+      {"answer": "Binarization", "correct": false, "feedback": "Это бинаризация."}
+    ]
+  },
+  {
+    "question": "Какую задачу решает функция `antiderivative`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Вычисляет производную полинома", "correct": false, "feedback": "Нет, первообразную (интеграл)."},
+      {"answer": "Вычисляет коэффициенты первообразной полинома", "correct": true, "feedback": "Верно."},
+      {"answer": "Находит корни полинома", "correct": false, "feedback": "Неверно."},
+      {"answer": "Интегрирует полином численно", "correct": false, "feedback": "Нет, аналитически через коэффициенты."}
+    ]
+  },
+  {
+    "question": "Массив коэффициентов `[6, 0, 1]` соответствует полиному:",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "6x^3 + x", "correct": false, "feedback": "Неверно."},
+      {"answer": "6x^2 + 1", "correct": true, "feedback": "Верно. 6*x^2 + 0*x^1 + 1."},
+      {"answer": "6x + 1", "correct": false, "feedback": "Неверно."},
+      {"answer": "x^2 + 6", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Какая первообразная для `6x^2`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "12x", "correct": false, "feedback": "Это производная."},
+      {"answer": "2x^3", "correct": true, "feedback": "Верно. 6 / (2+1) = 2."},
+      {"answer": "3x^2", "correct": false, "feedback": "Неверно."},
+      {"answer": "6x^3", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Как математически изменяется коэффициент при взятии первообразной для `a * x^n`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Умножается на n", "correct": false, "feedback": "Неверно."},
+      {"answer": "Делится на (n + 1)", "correct": true, "feedback": "Верно."},
+      {"answer": "Возводится в степень (n + 1)", "correct": false, "feedback": "Неверно."},
+      {"answer": "Остается без изменений", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Как добавить константу `const` в конец массива NumPy `coefs`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "coefs.append(const)", "correct": false, "feedback": "У массивов NumPy нет метода append, это метод списков."},
+      {"answer": "np.append(coefs, const)", "correct": true, "feedback": "Верно."},
+      {"answer": "np.insert(coefs, const)", "correct": false, "feedback": "Неверный синтаксис."},
+      {"answer": "coefs + [const]", "correct": false, "feedback": "Для массивов NumPy это поэлементное сложение, а не конкатенация."}
+    ]
+  },
+  {
+    "question": "Дан массив `[4, 6, 0, 1]` и `const = 42`. Какова будет длина результирующего массива?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "4", "correct": false, "feedback": "Исходная длина."},
+      {"answer": "5", "correct": true, "feedback": "Верно. Добавляется один элемент (константа)."},
+      {"answer": "6", "correct": false, "feedback": "Неверно."},
+      {"answer": "3", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Какой массив степеней нужно использовать для деления исходных коэффициентов `[c_n, c_{n-1}, ..., c_0]`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "[n, n-1, ..., 1]", "correct": false, "feedback": "Неверно."},
+      {"answer": "[n+1, n, ..., 1]", "correct": true, "feedback": "Верно. Степени при интегрировании увеличиваются на 1."},
+      {"answer": "[1, 2, ..., n+1]", "correct": false, "feedback": "Неверный порядок."},
+      {"answer": "[0, 1, ..., n]", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Какие две операции NumPy необходимы для вычисления новых коэффициентов без `const`?",
+    "type": "many_choice",
+    "answers": [
+      {"answer": "Деление массива коэффициентов на массив степеней", "correct": true, "feedback": "Верно."},
+      {"answer": "Создание массива степеней (например, через np.arange)", "correct": true, "feedback": "Верно."},
+      {"answer": "Умножение на x", "correct": false, "feedback": "Не требуется."},
+      {"answer": "Сортировка", "correct": false, "feedback": "Не требуется."}
+    ]
+  },
+  {
+    "question": "Что соответствует последнему элементу исходного массива `[8, 12, 8, 1]`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Коэффициент при x^3", "correct": false, "feedback": "Это первый элемент."},
+      {"answer": "Свободный член (константа)", "correct": true, "feedback": "Верно. Коэффициент при x^0."},
+      {"answer": "Коэффициент при x", "correct": false, "feedback": "Неверно."},
+      {"answer": "Старший коэффициент", "correct": false, "feedback": "Это первый элемент."}
+    ]
+  },
+  {
+    "question": "Если исходный массив имеет тип `int`, а после деления получаются дроби, какой тип данных будет у результирующего массива?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "int", "correct": false, "feedback": "Не может хранить дроби."},
+      {"answer": "float", "correct": true, "feedback": "Верно. NumPy автоматически повысит тип до float."},
+      {"answer": "bool", "correct": false, "feedback": "Неверно."},
+      {"answer": "object", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Чему равен коэффициент при `x^1` в первообразной для константы `5` (т.е. `5 * x^0`)?",
+    "type": "numeric",
+    "precision": 0,
+    "answers": [
+      {"type": "value", "value": 5, "correct": true, "feedback": "Верно. 5 / (0+1) = 5. Получаем 5x."},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: 5."}
+    ]
+  },
+  {
+    "question": "Какая функция NumPy чаще всего используется для генерации массива степеней `[n, n-1, ..., 1]`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "np.linspace()", "correct": false, "feedback": "Можно, но менее удобно для целых чисел."},
+      {"answer": "np.arange()", "correct": true, "feedback": "Верно. Например, np.arange(n+1, 0, -1)."},
+      {"answer": "np.zeros()", "correct": false, "feedback": "Создает нули."},
+      {"answer": "np.ones()", "correct": false, "feedback": "Создает единицы."}
+    ]
+  },
+  {
+    "question": "Что вернет функция `antiderivative` для массива `[2]` и `const = 0`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "[2, 0]", "correct": false, "feedback": "Неверно. Коэффициент нужно разделить на степень."},
+      {"answer": "[1., 0.]", "correct": true, "feedback": "Верно. 2x^0 -> 2x^1 / 1 = 2x. Массив: [2., 0.]."},
+      {"answer": "[0.5, 0]", "correct": false, "feedback": "Неверно."},
+      {"answer": "[2]", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Какова первообразная для `4x^3`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "12x^2", "correct": false, "feedback": "Это производная."},
+      {"answer": "x^4", "correct": true, "feedback": "Верно. 4 / (3+1) = 1."},
+      {"answer": "4x^4", "correct": false, "feedback": "Неверно."},
+      {"answer": "2x^4", "correct": false, "feedback": "Неверно."}
+    ]
+  },
+  {
+    "question": "Зачем нужен параметр `const` в функции `antiderivative`?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Для указания степени полинома", "correct": false, "feedback": "Неверно."},
+      {"answer": "Для добавления произвольной постоянной интегрирования (свободного члена)", "correct": true, "feedback": "Верно. C в формуле F(x) + C."},
+      {"answer": "Для нормализации коэффициентов", "correct": false, "feedback": "Неверно."},
+      {"answer": "Для задания типа данных массива", "correct": false, "feedback": "Неверно."}
+    ]
+  }
+]

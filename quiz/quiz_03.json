@@ -1,0 +1,532 @@
+[
+  {
+    "question": "Какой основной объект Pandas используется для работы с табличными данными?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "ndarray", "correct": false, "feedback": "Это объект NumPy."},
+      {"answer": "DataFrame", "correct": true, "feedback": "Верно. Это двумерная таблица с именованными столбцами."},
+      {"answer": "Series", "correct": false, "feedback": "Это одномерный объект Pandas."},
+      {"answer": "Array", "correct": false, "feedback": "Это объект NumPy."}
+    ]
+  },
+  {
+    "question": "Какая функция используется для загрузки данных из CSV-файла?",
+    "type": "string",
+    "answers": [
+      {"answer": "read_csv", "correct": true, "feedback": "Верно. pd.read_csv()", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: read_csv"}
+    ]
+  },
+  {
+    "question": "Какой метод позволяет просмотреть первые N строк DataFrame?",
+    "type": "string",
+    "answers": [
+      {"answer": "head", "correct": true, "feedback": "Верно. df.head(N)", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: head"}
+    ]
+  },
+  {
+    "question": "Какой метод позволяет просмотреть последние N строк DataFrame?",
+    "type": "string",
+    "answers": [
+      {"answer": "tail", "correct": true, "feedback": "Верно. df.tail(N)", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: tail"}
+    ]
+  },
+  {
+    "question": "Какой метод возвращает краткую сводку о DataFrame (типы данных, количество непустых значений)?",
+    "type": "string",
+    "answers": [
+      {"answer": "info", "correct": true, "feedback": "Верно. df.info()", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: info"}
+    ]
+  },
+  {
+    "question": "Какой метод возвращает статистическую сводку по числовым столбцам (среднее, std, min, max, квантили)?",
+    "type": "string",
+    "answers": [
+      {"answer": "describe", "correct": true, "feedback": "Верно. df.describe()", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: describe"}
+    ]
+  },
+  {
+    "question": "Какой атрибут DataFrame позволяет получить его форму (число строк, число столбцов)?",
+    "type": "string",
+    "answers": [
+      {"answer": "shape", "correct": true, "feedback": "Верно. df.shape возвращает кортеж (n_rows, n_cols).", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: shape"}
+    ]
+  },
+  {
+    "question": "Какой атрибут DataFrame содержит названия его столбцов?",
+    "type": "string",
+    "answers": [
+      {"answer": "columns", "correct": true, "feedback": "Верно. df.columns", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: columns"}
+    ]
+  },
+  {
+    "question": "Какой метод возвращает булеву маску наличия пропущенных значений (NaN)?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "isna() или isnull()", "correct": true, "feedback": "Верно. Оба метода эквивалентны."},
+      {"answer": "has_nan()", "correct": false, "feedback": "Такого метода нет."},
+      {"answer": "check_missing()", "correct": false, "feedback": "Такого метода нет."},
+      {"answer": "empty()", "correct": false, "feedback": "Проверяет, пуст ли DataFrame."}
+    ]
+  },
+  {
+    "question": "Какой метод используется для заполнения пропущенных значений?",
+    "type": "string",
+    "answers": [
+      {"answer": "fillna", "correct": true, "feedback": "Верно. df.fillna(value)", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: fillna"}
+    ]
+  },
+  {
+    "question": "Какой метод используется для удаления строк или столбцов с пропущенными значениями?",
+    "type": "string",
+    "answers": [
+      {"answer": "dropna", "correct": true, "feedback": "Верно. df.dropna()", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: dropna"}
+    ]
+  },
+  {
+    "question": "Как подсчитать общее количество пропущенных значений во всём DataFrame?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "df.isna().sum().sum()", "correct": true, "feedback": "Верно. Первая sum() считает по столбцам, вторая — суммирует их."},
+      {"answer": "df.isna().count()", "correct": false, "feedback": "count() считает непустые значения."},
+      {"answer": "df.sum().isna()", "correct": false, "feedback": "Неверный порядок операций."},
+      {"answer": "df.missing().total()", "correct": false, "feedback": "Таких методов нет."}
+    ]
+  },
+  {
+    "question": "Какой метод используется для подсчёта частоты уникальных значений в столбце?",
+    "type": "string",
+    "answers": [
+      {"answer": "value_counts", "correct": true, "feedback": "Верно. df['col'].value_counts()", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: value_counts"}
+    ]
+  },
+  {
+    "question": "Какой метод возвращает массив уникальных значений столбца?",
+    "type": "string",
+    "answers": [
+      {"answer": "unique", "correct": true, "feedback": "Верно. df['col'].unique()", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: unique"}
+    ]
+  },
+  {
+    "question": "Какой метод возвращает количество уникальных значений в столбце?",
+    "type": "string",
+    "answers": [
+      {"answer": "nunique", "correct": true, "feedback": "Верно. df['col'].nunique()", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: nunique"}
+    ]
+  },
+  {
+    "question": "Как отфильтровать DataFrame, оставив только строки, где столбец 'age' больше 18?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "df[df['age'] > 18]", "correct": true, "feedback": "Верно. Это булева индексация."},
+      {"answer": "df.filter('age' > 18)", "correct": false, "feedback": "Неверный синтаксис."},
+      {"answer": "df.where('age' > 18)", "correct": false, "feedback": "Неверный синтаксис."},
+      {"answer": "df.select('age' > 18)", "correct": false, "feedback": "Неверный синтаксис."}
+    ]
+  },
+  {
+    "question": "Какой метод используется для сортировки DataFrame по значениям столбца?",
+    "type": "string",
+    "answers": [
+      {"answer": "sort_values", "correct": true, "feedback": "Верно. df.sort_values('col')", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: sort_values"}
+    ]
+  },
+  {
+    "question": "Какой параметр sort_values отвечает за порядок сортировки (по возрастанию/убыванию)?",
+    "type": "string",
+    "answers": [
+      {"answer": "ascending", "correct": true, "feedback": "Верно. ascending=False для убывания.", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: ascending"}
+    ]
+  },
+  {
+    "question": "Какой метод используется для сортировки DataFrame по индексу?",
+    "type": "string",
+    "answers": [
+      {"answer": "sort_index", "correct": true, "feedback": "Верно. df.sort_index()", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: sort_index"}
+    ]
+  },
+  {
+    "question": "Какой метод используется для группировки данных по столбцу?",
+    "type": "string",
+    "answers": [
+      {"answer": "groupby", "correct": true, "feedback": "Верно. df.groupby('col')", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: groupby"}
+    ]
+  },
+  {
+    "question": "Какой метод вычисляет среднее значение по группам после groupby?",
+    "type": "string",
+    "answers": [
+      {"answer": "mean", "correct": true, "feedback": "Верно. df.groupby('col').mean()", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: mean"}
+    ]
+  },
+  {
+    "question": "Какие два метода агрегации можно применить после groupby? (Выберите 2)",
+    "type": "many_choice",
+    "answers": [
+      {"answer": "sum", "correct": true, "feedback": "Верно. Сумма по группам."},
+      {"answer": "max", "correct": true, "feedback": "Верно. Максимум по группам."},
+      {"answer": "split", "correct": false, "feedback": "Такого метода агрегации нет."},
+      {"answer": "merge", "correct": false, "feedback": "Это метод объединения DataFrame."}
+    ]
+  },
+  {
+    "question": "Какой метод позволяет применить несколько агрегирующих функций одновременно к разным столбцам?",
+    "type": "string",
+    "answers": [
+      {"answer": "agg", "correct": true, "feedback": "Верно. Или aggregate.", "match_case": false},
+      {"answer": "aggregate", "correct": true, "feedback": "Верно. Синоним agg.", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: agg (или aggregate)"}
+    ]
+  },
+  {
+    "question": "Какой метод используется для удаления дубликатов строк?",
+    "type": "string",
+    "answers": [
+      {"answer": "drop_duplicates", "correct": true, "feedback": "Верно. df.drop_duplicates()", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: drop_duplicates"}
+    ]
+  },
+  {
+    "question": "Какой метод возвращает булеву маску дублирующихся строк?",
+    "type": "string",
+    "answers": [
+      {"answer": "duplicated", "correct": true, "feedback": "Верно. df.duplicated()", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: duplicated"}
+    ]
+  },
+  {
+    "question": "Какой параметр drop_duplicates позволяет оставить последнюю из повторяющихся строк?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "keep='last'", "correct": true, "feedback": "Верно."},
+      {"answer": "keep='first'", "correct": false, "feedback": "Это значение по умолчанию, оставляет первую."},
+      {"answer": "keep='all'", "correct": false, "feedback": "Неверный параметр."},
+      {"answer": "keep_last=True", "correct": false, "feedback": "Неверный синтаксис."}
+    ]
+  },
+  {
+    "question": "Какой метод используется для сброса индекса DataFrame?",
+    "type": "string",
+    "answers": [
+      {"answer": "reset_index", "correct": true, "feedback": "Верно. df.reset_index()", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: reset_index"}
+    ]
+  },
+  {
+    "question": "Какой параметр reset_index позволяет удалить старый индекс, а не добавлять его как столбец?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "drop=True", "correct": true, "feedback": "Верно."},
+      {"answer": "remove=True", "correct": false, "feedback": "Неверный параметр."},
+      {"answer": "delete=True", "correct": false, "feedback": "Неверный параметр."},
+      {"answer": "inplace=True", "correct": false, "feedback": "Этот параметр изменяет DataFrame на месте, но не удаляет индекс как столбец."}
+    ]
+  },
+  {
+    "question": "Какой метод используется для объединения двух DataFrame по общему столбцу?",
+    "type": "string",
+    "answers": [
+      {"answer": "merge", "correct": true, "feedback": "Верно. pd.merge(df1, df2, on='col')", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: merge"}
+    ]
+  },
+  {
+    "question": "Какой метод используется для конкатенации (склеивания) DataFrame по оси?",
+    "type": "string",
+    "answers": [
+      {"answer": "concat", "correct": true, "feedback": "Верно. pd.concat([df1, df2])", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: concat"}
+    ]
+  },
+  {
+    "question": "Какой метод используется для доступа к группе строк/столбцов по их именам (меткам)?",
+    "type": "string",
+    "answers": [
+      {"answer": "loc", "correct": true, "feedback": "Верно. df.loc[метки]", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: loc"}
+    ]
+  },
+  {
+    "question": "Какой метод используется для доступа к группе строк/столбцов по их целочисленным позициям?",
+    "type": "string",
+    "answers": [
+      {"answer": "iloc", "correct": true, "feedback": "Верно. df.iloc[позиции]", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: iloc"}
+    ]
+  },
+  {
+    "question": "Как выбрать столбец 'name' из DataFrame df?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "df['name']", "correct": true, "feedback": "Верно."},
+      {"answer": "df.name", "correct": true, "feedback": "Верно, если имя не содержит пробелов и не является зарезервированным словом."},
+      {"answer": "df->name", "correct": false, "feedback": "Неверный синтаксис."},
+      {"answer": "df(name)", "correct": false, "feedback": "Неверный синтаксис."}
+    ]
+  },
+  {
+    "question": "Какой метод используется для сохранения DataFrame в CSV-файл?",
+    "type": "string",
+    "answers": [
+      {"answer": "to_csv", "correct": true, "feedback": "Верно. df.to_csv('file.csv')", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: to_csv"}
+    ]
+  },
+  {
+    "question": "Какой параметр to_csv предотвращает сохранение индекса в файл?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "index=False", "correct": true, "feedback": "Верно."},
+      {"answer": "save_index=False", "correct": false, "feedback": "Неверный параметр."},
+      {"answer": "no_index=True", "correct": false, "feedback": "Неверный параметр."},
+      {"answer": "drop_index=True", "correct": false, "feedback": "Неверный параметр."}
+    ]
+  },
+  {
+    "question": "Какой параметр to_csv позволяет задать кодировку файла (например, для кириллицы)?",
+    "type": "string",
+    "answers": [
+      {"answer": "encoding", "correct": true, "feedback": "Верно. encoding='utf-8'", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: encoding"}
+    ]
+  },
+  {
+    "question": "Какой метод используется для переименования столбцов DataFrame?",
+    "type": "string",
+    "answers": [
+      {"answer": "rename", "correct": true, "feedback": "Верно. df.rename(columns={'old': 'new'})", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: rename"}
+    ]
+  },
+  {
+    "question": "Какой метод позволяет применить функцию к каждому столбцу или строке DataFrame?",
+    "type": "string",
+    "answers": [
+      {"answer": "apply", "correct": true, "feedback": "Верно. df.apply(func)", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: apply"}
+    ]
+  },
+  {
+    "question": "Какой параметр apply задаёт ось применения функции (0 — столбцы, 1 — строки)?",
+    "type": "string",
+    "answers": [
+      {"answer": "axis", "correct": true, "feedback": "Верно. axis=0 или axis=1", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: axis"}
+    ]
+  },
+  {
+    "question": "Какой метод используется для преобразования столбца в другой тип данных?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "astype()", "correct": true, "feedback": "Верно. df['col'].astype(int)"},
+      {"answer": "convert()", "correct": false, "feedback": "Такого метода нет."},
+      {"answer": "cast()", "correct": false, "feedback": "Такого метода в Pandas нет."},
+      {"answer": "type()", "correct": false, "feedback": "Это встроенная функция Python."}
+    ]
+  },
+  {
+    "question": "Какой метод используется для создания нового столбца на основе существующих?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Прямое присваивание df['new'] = ...", "correct": true, "feedback": "Верно."},
+      {"answer": "df.assign(new=...)", "correct": true, "feedback": "Верно. Альтернативный способ."},
+      {"answer": "df.add_column('new', ...)", "correct": false, "feedback": "Такого метода нет."},
+      {"answer": "df.insert_column('new', ...)", "correct": false, "feedback": "Такого метода нет."}
+    ]
+  },
+  {
+    "question": "Какой метод используется для удаления столбца из DataFrame?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "df.drop('col', axis=1)", "correct": true, "feedback": "Верно."},
+      {"answer": "del df['col']", "correct": true, "feedback": "Верно. Это оператор Python."},
+      {"answer": "df.remove('col')", "correct": false, "feedback": "Такого метода нет."},
+      {"answer": "df.delete('col')", "correct": false, "feedback": "Такого метода нет."}
+    ]
+  },
+  {
+    "question": "Какой метод используется для замены значений в DataFrame?",
+    "type": "string",
+    "answers": [
+      {"answer": "replace", "correct": true, "feedback": "Верно. df.replace(old, new)", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: replace"}
+    ]
+  },
+  {
+    "question": "Какой метод используется для применения условия (если-иначе) к столбцу?",
+    "type": "string",
+    "answers": [
+      {"answer": "where", "correct": true, "feedback": "Верно. Или np.where.", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: where"}
+    ]
+  },
+  {
+    "question": "Какой метод NumPy часто используется вместе с Pandas для условного выбора значений?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "np.where", "correct": true, "feedback": "Верно. np.where(condition, x, y)"},
+      {"answer": "np.select", "correct": false, "feedback": "Существует, но менее распространён."},
+      {"answer": "np.ifelse", "correct": false, "feedback": "Такой функции нет."},
+      {"answer": "np.case", "correct": false, "feedback": "Такой функции нет."}
+    ]
+  },
+  {
+    "question": "Какой метод используется для установки столбца в качестве индекса DataFrame?",
+    "type": "string",
+    "answers": [
+      {"answer": "set_index", "correct": true, "feedback": "Верно. df.set_index('col')", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: set_index"}
+    ]
+  },
+  {
+    "question": "Какой параметр read_csv позволяет задать разделитель столбцов?",
+    "type": "string",
+    "answers": [
+      {"answer": "sep", "correct": true, "feedback": "Верно. sep=';' или sep=','", "match_case": false},
+      {"answer": "delimiter", "correct": true, "feedback": "Верно. Синоним sep.", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: sep (или delimiter)"}
+    ]
+  },
+  {
+    "question": "Какой параметр read_csv позволяет пропустить первые N строк файла?",
+    "type": "string",
+    "answers": [
+      {"answer": "skiprows", "correct": true, "feedback": "Верно. skiprows=N", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: skiprows"}
+    ]
+  },
+  {
+    "question": "Какой параметр read_csv позволяет использовать определённый столбец в качестве индекса при загрузке?",
+    "type": "string",
+    "answers": [
+      {"answer": "index_col", "correct": true, "feedback": "Верно. index_col=0", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: index_col"}
+    ]
+  },
+  {
+    "question": "Какой метод позволяет выбрать подмножество столбцов по их именам?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "df[['col1', 'col2']]", "correct": true, "feedback": "Верно. Передаём список имён."},
+      {"answer": "df.filter(items=['col1', 'col2'])", "correct": true, "feedback": "Верно. Альтернативный способ."},
+      {"answer": "df.select('col1', 'col2')", "correct": false, "feedback": "Такого метода нет."},
+      {"answer": "df.pick('col1', 'col2')", "correct": false, "feedback": "Такого метода нет."}
+    ]
+  },
+  {
+    "question": "Какой метод используется для вычисления кумулятивной суммы по столбцу?",
+    "type": "string",
+    "answers": [
+      {"answer": "cumsum", "correct": true, "feedback": "Верно. df['col'].cumsum()", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: cumsum"}
+    ]
+  },
+  {
+    "question": "Какой метод используется для вычисления скользящего (rolling) среднего?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "df['col'].rolling(window=N).mean()", "correct": true, "feedback": "Верно."},
+      {"answer": "df['col'].moving(N).mean()", "correct": false, "feedback": "Такого метода нет."},
+      {"answer": "df['col'].slide(N).mean()", "correct": false, "feedback": "Такого метода нет."},
+      {"answer": "df['col'].window(N).mean()", "correct": false, "feedback": "Такого метода нет."}
+    ]
+  },
+  {
+    "question": "Какой метод используется для преобразования DataFrame в словарь?",
+    "type": "string",
+    "answers": [
+      {"answer": "to_dict", "correct": true, "feedback": "Верно. df.to_dict()", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: to_dict"}
+    ]
+  },
+  {
+    "question": "Какой метод используется для преобразования DataFrame в numpy-массив?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "df.to_numpy()", "correct": true, "feedback": "Верно."},
+      {"answer": "df.values", "correct": true, "feedback": "Верно. Атрибут, возвращающий ndarray."},
+      {"answer": "df.array()", "correct": false, "feedback": "Неверно."},
+      {"answer": "df.np()", "correct": false, "feedback": "Такого метода нет."}
+    ]
+  },
+  {
+    "question": "Какие два метода позволяют объединить DataFrame вертикально (друг под другом)? (Выберите 2)",
+    "type": "many_choice",
+    "answers": [
+      {"answer": "pd.concat([df1, df2], axis=0)", "correct": true, "feedback": "Верно."},
+      {"answer": "pd.concat([df1, df2])", "correct": true, "feedback": "Верно. axis=0 по умолчанию."},
+      {"answer": "pd.merge(df1, df2)", "correct": false, "feedback": "Это объединение по столбцу-ключу."},
+      {"answer": "pd.join(df1, df2)", "correct": false, "feedback": "Это объединение по индексу."}
+    ]
+  },
+  {
+    "question": "Какой параметр merge задаёт тип объединения (inner, outer, left, right)?",
+    "type": "string",
+    "answers": [
+      {"answer": "how", "correct": true, "feedback": "Верно. how='left'", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: how"}
+    ]
+  },
+  {
+    "question": "Какой метод используется для проверки, содержит ли DataFrame дубликаты?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "df.duplicated().any()", "correct": true, "feedback": "Верно."},
+      {"answer": "df.has_duplicates()", "correct": false, "feedback": "Такого метода нет."},
+      {"answer": "df.is_duplicated()", "correct": false, "feedback": "Такого метода нет."},
+      {"answer": "df.check_duplicates()", "correct": false, "feedback": "Такого метода нет."}
+    ]
+  },
+  {
+    "question": "Какой метод используется для применения функции к каждому элементу DataFrame поэлементно?",
+    "type": "string",
+    "answers": [
+      {"answer": "applymap", "correct": true, "feedback": "Верно. Или map для Series.", "match_case": false},
+      {"answer": "map", "correct": true, "feedback": "Верно для Series.", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: applymap (для DataFrame) или map (для Series)"}
+    ]
+  },
+  {
+    "question": "Какой метод используется для преобразования столбца с категориями в набор бинарных столбцов (one-hot encoding)?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "pd.get_dummies(df['col'])", "correct": true, "feedback": "Верно."},
+      {"answer": "df.one_hot('col')", "correct": false, "feedback": "Такого метода нет."},
+      {"answer": "df.encode('col')", "correct": false, "feedback": "Такого метода нет."},
+      {"answer": "df.dummy('col')", "correct": false, "feedback": "Такого метода нет."}
+    ]
+  },
+  {
+    "question": "Какой метод используется для преобразования длинного формата DataFrame в широкий (pivot)?",
+    "type": "string",
+    "answers": [
+      {"answer": "pivot", "correct": true, "feedback": "Верно. df.pivot()", "match_case": false},
+      {"answer": "pivot_table", "correct": true, "feedback": "Верно. Более расширенная версия.", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: pivot (или pivot_table)"}
+    ]
+  },
+  {
+    "question": "Какой метод используется для преобразования широкого формата DataFrame в длинный (unpivot)?",
+    "type": "string",
+    "answers": [
+      {"answer": "melt", "correct": true, "feedback": "Верно. pd.melt(df)", "match_case": false},
+      {"type": "default", "feedback": "Неверно. Правильный ответ: melt"}
+    ]
+  }
+]

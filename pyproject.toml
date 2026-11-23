@@ -48,7 +48,8 @@ dependencies = [
     # tf-keras
     # tensorflow-model-optimization
     "opencv-python (>=4.13.0.92,<5.0.0.0)",
-    "jupyterlab-spreadsheet-editor (>=0.7.2,<0.8.0)"
+    "jupyterlab-spreadsheet-editor (>=0.7.2,<0.8.0)",
+    "ucimlrepo (>=0.0.7,<0.0.8)"
 ]
 
 
@@ -85,7 +86,12 @@ python -m jupyter lab --allow-root --NotebookApp.token='' --NotebookApp.password
 """
 
 calcbrs = """
+python ./brs/clear_pd.py ./brs/.students_56.csv ./brs/students_56.csv
 python ./brs/calc_brs.py ./brs/students_56.csv -o ./brs/result_56.csv
+
+python ./brs/clear_pd.py ./brs/.students_57.csv ./brs/students_57.csv
 python ./brs/calc_brs.py ./brs/students_57.csv -o ./brs/result_57.csv
+
+python ./brs/clear_pd.py ./brs/.students_58.csv ./brs/students_58.csv
 python ./brs/calc_brs.py ./brs/students_58.csv -o ./brs/result_58.csv
 """
